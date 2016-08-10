@@ -1,0 +1,21 @@
+{
+  "name": "rocky-watchface-tutorial-part2",
+  "author": "MakeAwesomeHappen",
+  "version": "1.0.0",
+  "keywords": ["pebble-app"],
+  "private": true,
+  "dependencies": {},
+  "pebble": {
+    "displayName": "rocky-watchface-tutorial-part2",
+    "uuid": "8c20caf3-db28-4ff8-87c2-8ba98e1fcbb6",
+    "projectType": "rocky",
+    "sdkVersion": "3",
+    "enableMultiJS": true,
+    "watchapp": {
+      "watchface": false
+    },
+    "resources": {
+      "media": []
+    }
+  }
+}
