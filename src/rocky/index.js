@@ -53,14 +53,14 @@ rocky.on('draw', function(event) {
 
   // Calculate the minute hand angle
   var minuteFraction = (d.getMinutes()) / 60;
-  var minuteAngle = clockwiseRad(minuteFraction);
+  var minuteAngle = fractionToRadian(minuteFraction);
 
   // Draw the minute hand
   drawHand(ctx, cx, cy, minuteAngle, maxLength, 'white');
 
   // Calculate the hour hand angle
   var hourFraction = (d.getHours() % 12 + minuteFraction) / 12;
-  var hourAngle = clockwiseRad(hourFraction);
+  var hourAngle = fractionToRadian(hourFraction);
 
   // Draw the hour hand
   drawHand(ctx, cx, cy, hourAngle, maxLength * 0.6, 'lightblue');
@@ -80,8 +80,8 @@ function drawWeather(ctx, weather) {
 
 function drawHand(ctx, cx, cy, angle, length, color) {
   // Find the end points
-  var x2 = cx + Math.sin(angle) * length;
-  var y2 = cy + Math.cos(angle) * length;
+	var x2 = cx + Math.sin(angle) * length;
+  var y2 = cy - Math.cos(angle) * length;
 
   // Configure how we want to draw the hand
   ctx.lineWidth = 8;
@@ -98,8 +98,7 @@ function drawHand(ctx, cx, cy, angle, length, color) {
   ctx.stroke();
 }
 
-function clockwiseRad(fraction) {
-  // Convert a fraction into a Radian
-  return (1.5 - fraction) * 2 * Math.PI;
+function fractionToRadian(fraction) {
+  return fraction * 2 * Math.PI;
 }
 
