@@ -10,12 +10,12 @@ rocky.on('hourchange', function(event) {
 });
 
 rocky.on('minutechange', function(event) {
-	// Tick every minute
+  // Tick every minute
   rocky.requestDraw();
 });
 
 rocky.on('message', function(event) {
-	// Receive a message from the mobile device (pkjs)
+  // Receive a message from the mobile device (pkjs)
   var message = event.data;
 
   if (message.weather) {
@@ -80,7 +80,7 @@ function drawWeather(ctx, weather) {
 
 function drawHand(ctx, cx, cy, angle, length, color) {
   // Find the end points
-	var x2 = cx + Math.sin(angle) * length;
+  var x2 = cx + Math.sin(angle) * length;
   var y2 = cy - Math.cos(angle) * length;
 
   // Configure how we want to draw the hand
