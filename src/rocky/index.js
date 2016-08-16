@@ -35,7 +35,7 @@ rocky.on('draw', function(event) {
   ctx.clearRect(0, 0, ctx.canvas.clientWidth, ctx.canvas.clientHeight);
 
   // Draw the conditions (before clock hands, so it's drawn underneath them)
-  if (weather !== null) {
+  if (weather) {
     drawWeather(ctx, weather);
   }
 
