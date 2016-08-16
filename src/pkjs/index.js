@@ -1,6 +1,6 @@
 // PebbleKit JS (pkjs)
 
-var myAPIKey = '9858eb71a058d377abcd05f64763b42b';
+var myAPIKey = '1234567890';
 
 Pebble.on('message', function(event) {
   // Get the message that was passed
