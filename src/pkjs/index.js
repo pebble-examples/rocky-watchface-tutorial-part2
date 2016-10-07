@@ -34,7 +34,12 @@ Pebble.on('message', function(event) {
 
 function request(url, type, callback) {
   var xhr = new XMLHttpRequest();
-  xhr.onload = function () {
+  xhr.onload = function (e) {
+    // HTTP 4xx-5xx are errors:
+    if (xhr.status >= 400 && xhr.status < 600) {
+      console.error('Request failed with HTTP status ' + xhr.status + ', body: ' + this.responseText);
+      return;
+    }
     callback(this.responseText);
   };
   xhr.open(type, url);
